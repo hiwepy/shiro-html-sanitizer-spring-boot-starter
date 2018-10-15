@@ -372,7 +372,7 @@
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>		
 		<owasp-html-sanitizer.version>20180219.1</owasp-html-sanitizer.version>
-		<shiro-biz.version>1.0.4-SNAPSHOT</shiro-biz.version>
+		<shiro-biz.version>1.0.5.RELEASE</shiro-biz.version>
 	</properties> 
 
 	<dependencies>
