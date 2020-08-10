@@ -12,7 +12,7 @@
 	
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>shiro-html-sanitizer-spring-boot-starter</artifactId>
-	<description>Spring Boot Starter For Shiro With Owasp-Java-Html-Sanitizer</description>
+	<description>Spring Boot Starter For Shiro With OWASP Java HTML Sanitizer</description>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/hiwepy/${project.artifactId}</url>
@@ -371,7 +371,7 @@
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>		
-		<owasp-html-sanitizer.version>20180219.1</owasp-html-sanitizer.version>
+		<owasp-html-sanitizer.version>20200713.1</owasp-html-sanitizer.version>
 		<shiro.version>1.5.3</shiro.version>
 		<shiro-biz.version>1.1.0.RELEASE</shiro-biz.version>
 	</properties> 
