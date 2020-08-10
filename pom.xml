@@ -373,7 +373,7 @@
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>		
 		<owasp-html-sanitizer.version>20180219.1</owasp-html-sanitizer.version>
 		<shiro.version>1.5.3</shiro.version>
-		<shiro-biz.version>1.1.0-SNAPSHOT</shiro-biz.version>
+		<shiro-biz.version>1.1.0.RELEASE</shiro-biz.version>
 	</properties> 
 
 	<dependencies>
