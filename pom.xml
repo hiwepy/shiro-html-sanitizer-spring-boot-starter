@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.12.RELEASE</version>
+		<version>4.1.0-M4</version>
 		<relativePath /> 
 	</parent>
 	
 	<groupId>io.github.easy4j</groupId>
 	<artifactId>shiro-html-sanitizer-spring-boot-starter</artifactId>
 	<description>Spring Boot Starter For Shiro With OWASP Java HTML Sanitizer</description>
-	<version>2.3.x.20260527-SNAPSHOT</version>
+	<version>4.1.x.20260527-SNAPSHOT</version>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/easy-4-java/${project.artifactId}</url>
 	<packaging>jar</packaging>
@@ -364,8 +364,8 @@
 
 		
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
 			<optional>true</optional>
 		</dependency>
 
