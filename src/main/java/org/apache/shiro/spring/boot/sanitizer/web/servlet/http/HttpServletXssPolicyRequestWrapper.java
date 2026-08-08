@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * XSS(Cross Site Scripting)，即跨站脚本攻击请求过滤;
- * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class HttpServletXssPolicyRequestWrapper extends HttpServletRequestWrapper {
 
