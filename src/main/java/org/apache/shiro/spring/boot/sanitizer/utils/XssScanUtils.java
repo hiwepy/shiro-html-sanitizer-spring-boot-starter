@@ -17,6 +17,7 @@ package org.apache.shiro.spring.boot.sanitizer.utils;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+/**\n * Utility class for XSS scanning and HTML sanitization.\n *\n * @author [@Loong Wan](https://github.com/loong10k)\n * @since 1.0.0\n */
 public class XssScanUtils {
 	
 	public static boolean isXssHeader(String[] policyHeaders, String name) {
