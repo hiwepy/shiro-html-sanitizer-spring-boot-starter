@@ -1,29 +1,15 @@
-/*
- * Copyright (c) 2018, hiwepy (https://github.com/hiwepy).
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
 package org.apache.shiro.spring.boot;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.owasp.html.PolicyFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Unit tests for {{ @link ShiroXssPolicyWebFilterConfiguration }}.
+ * Unit tests for {@link ShiroXssPolicyWebFilterConfiguration}.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @DisplayName("ShiroXssPolicyWebFilterConfiguration Tests")
@@ -34,5 +20,37 @@ class ShiroXssPolicyWebFilterConfigurationTest {
     void testInstantiation() {
         ShiroXssPolicyWebFilterConfiguration instance = new ShiroXssPolicyWebFilterConfiguration();
         assertThat(instance).isNotNull();
+    }
+
+    @Test
+    @DisplayName("policyFactory bean creates a non-null PolicyFactory")
+    void testPolicyFactory() {
+        ShiroXssPolicyWebFilterConfiguration config = new ShiroXssPolicyWebFilterConfiguration();
+        PolicyFactory factory = config.policyFactory();
+        assertThat(factory).isNotNull();
+    }
+
+    @Test
+    @DisplayName("xssPolicyFilter bean creates a FilterRegistrationBean")
+    void testXssPolicyFilter() {
+        ShiroXssPolicyWebFilterConfiguration config = new ShiroXssPolicyWebFilterConfiguration();
+        PolicyFactory factory = config.policyFactory();
+        ShiroXssPolicyProperties properties = new ShiroXssPolicyProperties();
+        properties.setPolicyHeaders(new String[]{"X-Test"});
+        var registration = config.xssPolicyFilter(factory, properties);
+        assertThat(registration).isNotNull();
+        assertThat(registration.getFilter()).isNotNull();
+        assertThat(registration.isEnabled()).isFalse();
+    }
+
+    @Test
+    @DisplayName("xssPolicyFilter bean with null policyHeaders")
+    void testXssPolicyFilterNullHeaders() {
+        ShiroXssPolicyWebFilterConfiguration config = new ShiroXssPolicyWebFilterConfiguration();
+        PolicyFactory factory = config.policyFactory();
+        ShiroXssPolicyProperties properties = new ShiroXssPolicyProperties();
+        var registration = config.xssPolicyFilter(factory, properties);
+        assertThat(registration).isNotNull();
+        assertThat(registration.getFilter()).isNotNull();
     }
 }
