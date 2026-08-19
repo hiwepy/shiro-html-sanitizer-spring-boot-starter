@@ -17,9 +17,20 @@ package org.apache.shiro.spring.boot;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * <p>Configuration properties.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 @ConfigurationProperties(ShiroXssPolicyProperties.PREFIX)
 public class ShiroXssPolicyProperties {
 
+	/**
+	 * Returns the enabled.
+	 *
+	 * @return the enabled
+	 */
 	public static final String PREFIX = "shiro.xss-policy";
 
 	/** 是否启用 **/
@@ -27,18 +38,38 @@ public class ShiroXssPolicyProperties {
 	/** 需要进行Xss检查的Header */
 	protected String[] policyHeaders = null;
 
+	/**
+	 * Returns the enabled.
+	 *
+	 * @return the enabled
+	 */
 	public boolean isEnabled() {
 		return enabled;
 	}
 
+	/**
+	 * Sets the enabled.
+	 *
+	 * @param enabled the enabled
+	 */
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 
+	/**
+	 * Returns the policy headers.
+	 *
+	 * @return the policy headers
+	 */
 	public String[] getPolicyHeaders() {
 		return policyHeaders;
 	}
 
+	/**
+	 * Sets the policy headers.
+	 *
+	 * @param policyHeaders the policy headers
+	 */
 	public void setPolicyHeaders(String[] policyHeaders) {
 		this.policyHeaders = policyHeaders;
 	}

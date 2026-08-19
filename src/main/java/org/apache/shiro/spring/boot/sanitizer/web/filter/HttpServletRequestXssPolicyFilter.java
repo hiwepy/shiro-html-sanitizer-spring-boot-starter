@@ -18,6 +18,7 @@ import org.owasp.html.PolicyFactory;
 /**
  * XSS(Cross Site Scripting)，即跨站脚本攻击请求过滤
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class HttpServletRequestXssPolicyFilter implements Filter {
 
@@ -28,11 +29,24 @@ public class HttpServletRequestXssPolicyFilter implements Filter {
 	/** 需要进行Xss检查的Header */
 	protected String[] policyHeaders = null;
 
+	/**
+	 * init.
+	 *
+	 * @param filterConfig the filter config
+	 * @throws ServletException if an error occurs
+	 */
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// no-op
 	}
 
+	/**
+	 * do Filter.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @param filterChain the filter chain
+	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
 			throws IOException, ServletException {
@@ -49,23 +63,47 @@ public class HttpServletRequestXssPolicyFilter implements Filter {
 				httpResponse);
 	}
 
+	/**
+	 * destroy.
+	 *
+	 */
 	@Override
 	public void destroy() {
 		// no-op
 	}
 
+	/**
+	 * Returns the policy factory.
+	 *
+	 * @return the policy factory
+	 */
 	public PolicyFactory getPolicyFactory() {
 		return policyFactory;
 	}
 
+	/**
+	 * Sets the policy factory.
+	 *
+	 * @param policyFactory the policy factory
+	 */
 	public void setPolicyFactory(PolicyFactory policyFactory) {
 		this.policyFactory = policyFactory;
 	}
 
+	/**
+	 * Returns the policy headers.
+	 *
+	 * @return the policy headers
+	 */
 	public String[] getPolicyHeaders() {
 		return policyHeaders;
 	}
 
+	/**
+	 * Sets the policy headers.
+	 *
+	 * @param policyHeaders the policy headers
+	 */
 	public void setPolicyHeaders(String[] policyHeaders) {
 		this.policyHeaders = policyHeaders;
 	}

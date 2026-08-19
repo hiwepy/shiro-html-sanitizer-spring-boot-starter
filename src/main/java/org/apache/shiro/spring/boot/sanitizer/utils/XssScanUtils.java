@@ -20,6 +20,13 @@ import org.apache.commons.lang3.ArrayUtils;
 /**\n * Utility class for XSS scanning and HTML sanitization.\n *\n * @author <a href="https://github.com/loong10k">Loong Wan</a>\n * @since 1.0.0\n */
 public class XssScanUtils {
 	
+	/**
+	 * Determines whether is xss header.
+	 *
+	 * @param policyHeaders the policy headers
+	 * @param name the name
+	 * @return the result
+	 */
 	public static boolean isXssHeader(String[] policyHeaders, String name) {
 		if(policyHeaders != null && policyHeaders.length > 0){
 			return ArrayUtils.contains(policyHeaders, name);

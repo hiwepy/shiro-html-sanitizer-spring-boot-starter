@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 默认拦截器
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @Configuration
 @ConditionalOnWebApplication
@@ -23,12 +24,24 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(ShiroXssPolicyProperties.class)
 public class ShiroXssPolicyWebFilterConfiguration {
 
+	/**
+	 * policy Factory.
+	 *
+	 * @return the result
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public PolicyFactory policyFactory() {
 		return new HtmlPolicyBuilder().toFactory();
 	}
 
+	/**
+	 * xss Policy Filter.
+	 *
+	 * @param policyFactory the policy factory
+	 * @param properties the properties
+	 * @return the result
+	 */
 	@Bean("xssPolicy")
 	@ConditionalOnMissingBean(name = "xssPolicy")
 	public FilterRegistrationBean<HttpServletRequestXssPolicyFilter> xssPolicyFilter(PolicyFactory policyFactory, ShiroXssPolicyProperties properties) {
